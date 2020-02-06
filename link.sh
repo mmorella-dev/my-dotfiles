@@ -2,32 +2,72 @@
 
 cd "$(dirname "$0")/home"
 
-function doIt() {
-	# Make a symlink for all dotfiles in this directory
-	count=0
-	for file in .[^.]*; do
-		if [ $file != '.DS_Store' ] && [ $file != '.git' ]; then
-		  if [ -L ~/"$file" ]  && [[ "$1" != "--force" ]]; then
-		    echo "Symlink already exists. (~/$file)"
-		  elif [[ -f ~/"s$file" ]]; then
-		    echo -e "\e[31m~/$file: already exists. Use --force to overwrite.\e[0m"
-		  else
-		    echo -e "\e[32mCreated new symlink in home (~/$file)\e[0m"
-	        ln -sf $PWD/$file ~/$file
-	        let "count+=1"
-		  fi
-		fi
-	done
-	echo "Created $count new symlinks."
-}
+newFiles=()
 
 if [ "$1" == "--force" ]; then
-	doIt;
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
-	fi;
+  force=1
 fi;
-unset doIt;
+
+for file in .[^.]*; do
+  if [ $file != '.DS_Store' ] && [ $file != ".git" ]; then
+    if [ -f ~/"$file" ]; then
+      if [ -L ~/"$file" ]; then 
+        if [ ~/"$file" -ef "$file" ]; then
+          # Link already exists.
+          current_links+=("$file")
+        else
+          # Link exists, but points to a different file
+          protected_links+=("$file")
+          [ "$1" == "--force" ] && new_links+=("$file")
+        fi
+      else
+        # Link exists and points to a file in this directory
+        protected_files+=("$file")
+        [ "$1" == "--force" ] && new_links+=("$file")
+      fi
+    else
+      # Link does not yet exist, but will be created
+      new_links+=("$file")
+    fi
+  fi
+done
+
+if [[ ${#current_links[@]} != 0 ]]; then
+  echo -e "The following files are linked already:"
+  printf "\e[1;32m%s\e[0m\n" ${current_links[@]} | column;
+  echo ""
+fi
+
+if [[ ${#new_links[@]} != 0 ]]; then
+  echo -e "The following links will be created in $HOME:"
+  printf "\e[1;36m%s \e[0m\n" ${new_links[@]} | column
+  echo ""
+fi
+
+if [[ ${#protected_links[@]} != 0 ]] || [[ ${#protected_files[@]} != 0 ]] ; then
+  if [[ $force != 1 ]]; then
+    echo -e "The following files already exist. (Use --force to overwrite):"
+  else
+    echo -e "The following files WILL be overwritten (This cannot be undone!):"
+  fi
+  for file in ${protected_links[@]}; do
+    echo -e "\e[1;31m~/${file} (linked to $(readlink ~/"$file"))\e[0m"
+  done;
+  for file in ${protected_files[@]}; do
+    echo -e "\e[1;31m~/${file}\e[0m"
+  done;
+fi
+
+if [[ ${#new_links[@]} != 0 ]]; then
+	
+	while [[ ! $REPLY =~ [Yy]$ ]] && [[ ! $REPLY =~ [Nn]$ ]]; do
+	  read -p "Are you sure you want to continue? [y/n]" -n 1
+	  echo ""
+	done
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+	  for file in ${new_links[@]}; do
+	    ln -sf $PWD/$file ~/"$file"
+	    echo -e "\e[32mCreated link from $file to ~/$file"	    	
+	  done
+	fi
+fi

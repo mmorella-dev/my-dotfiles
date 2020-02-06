@@ -36,7 +36,8 @@ function do_unlink {
       rm -f ~/"$file"
 	  echo "\e[1;31mDeleted $file from home directory.\e[0m"
 	else 
-	  echo -e "\e[1;35mUnlinked ~/$file from $DIR_NAME.\e[0m"
+	  echo -e "\e[1;35mUnlinked ~/$file from $DIR_NAME.\e[0m"     
+	  rm -f ~/"$file"
 	  cp -f "$file" ~/"$file"
 	fi
   done
