@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/home"
+
+newFiles=()
+
+if [ "$1" == "--force" ]; then
+  force=1
+fi;
+
+for file in .[^.]*; do
+  if [ $file != '.DS_Store' ] && [ $file != ".git" ]; then
+    if [ -f ~/"$file" ]; then
+      if [ -L ~/"$file" ]; then 
+        if [ ~/"$file" -ef "$file" ]; then
+          # Link already exists.
+          current_links+=("$file")
+        else
+          # Link exists, but points to a different file
+          protected_links+=("$file")
+          [ "$1" == "--force" ] && new_links+=("$file")
+        fi
+      else
+        # Link exists and points to a file in this directory
+        protected_files+=("$file")
+        [ "$1" == "--force" ] && new_links+=("$file")
+      fi
+    else
+      # Link does not yet exist, but will be created
+      new_links+=("$file")
+    fi
+  f
+done
+
+if [[ ${#current_links[@]} != 0 ]]; then
+  echo -e "The following files are linked already:"
+  printf "\e[1;32m%s\e[0m\n" ${current_links[@]} | column;
+  echo ""
+fi
+
+if [[ ${#new_links[@]} != 0 ]]; then
+  echo -e "The following links will be created in $HOME:"
+  printf "\e[1;36m%s \e[0m\n" ${new_links[@]} | column
+  echo ""
+fi
+
+if [[ ${#protected_links[@]} != 0 ]] || [[ ${#protected_files[@]} != 0 ]] ; then
+  if [[ $force != 1 ]]; then
+    echo -e "The following files will not be overwritten (Use --force to overwrite):"
+  else
+    echo -e "The following files WILL be overwritten (This cannot be undone!):"
+  fi
+  for file in ${protected_links[@]} do
+    echo -e "\e[1;31m~/${file} (linked to $(readlink ~/"$file"))\e[0m"
+  done;
+  for file in ${protected_files[@]}; do
+    echo -e "\e[1;31m~/${file}"
+    echo ""
+  done;
+fi
+
+if [[ ${#new_links[@]} != 0 ]]; then
+	
+	while [[ ! $REPLY =~ [Yy]$ ]] && [[ ! $REPLY =~ [Nn]$ ]]; do
+	  read -p "Are you sure you want to continue? [y/n]" -n 1
+	  echo ""
+	done
+	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+	  for file in ${new_links[@]}; do
+	    ln -sf $PWD/$file ~/"$file"
+	    echo -e "\e[32mCreated link from $file to ~/$file"	    	
+	  done
+	else
+	  echo "Exiting..."
+
+	fi;
+fi;

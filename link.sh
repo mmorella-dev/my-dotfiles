@@ -1,17 +1,24 @@
+#!/usr/bin/env bash
+
 cd "$(dirname "$0")/home"
 
 function doIt() {
 	# Make a symlink for all dotfiles in this directory
-	for file in \.[^.]*; do
+	count=0
+	for file in .[^.]*; do
 		if [ $file != '.DS_Store' ] && [ $file != '.git' ]; then
-		    if [ -f "$file" ] || [ "$1" == "--force" ]; then
-			    echo "A file called $file already exists. Use --force to overwrite"
-			else
-				echo "Creating symlink to $file in home directory."
-				ln -sf $PWD/$file ~/$file
-			fi
+		  if [ -L ~/"$file" ]  && [[ "$1" != "--force" ]]; then
+		    echo "Symlink already exists. (~/$file)"
+		  elif [[ -f ~/"s$file" ]]; then
+		    echo -e "\e[31m~/$file: already exists. Use --force to overwrite.\e[0m"
+		  else
+		    echo -e "\e[32mCreated new symlink in home (~/$file)\e[0m"
+	        ln -sf $PWD/$file ~/$file
+	        let "count+=1"
+		  fi
 		fi
 	done
+	echo "Created $count new symlinks."
 }
 
 if [ "$1" == "--force" ]; then

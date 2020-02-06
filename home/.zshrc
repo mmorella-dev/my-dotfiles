@@ -16,3 +16,6 @@ zstyle :compinstall filename '/Users/maxmorella/.zshrc'
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+EDITOR="micro"

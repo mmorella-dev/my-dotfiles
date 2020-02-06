@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
-
-# Check is Homebrew is already installed.
+# Check if Homebrew is already installed.
 command -v brew &> /dev/null;
 
 if [[ "${?}" -ne 0 ]] && [ "$(uname)" == "Darwin" ]; then
@@ -18,7 +16,6 @@ if [[ "${?}" -ne 0 ]] && [ "$(uname)" == "Darwin" ]; then
     exit 1;
   fi;
 fi 
-
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -39,7 +36,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 
 # Install zsh and antigen
 brew install zsh
@@ -66,19 +63,20 @@ brew install php
 brew install gmp
 
 # Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+# brew tap bramstein/webfonttools
+# brew install sfnt2woff
+# brew install sfnt2woff-zopfli
+# brew install woff2
 
 # Install other useful binaries.
 brew install ack
 brew install git
 brew install git-lfs
 brew install gs
-brew install imagemagick --with-webp
+brew install imagemagick --with-web
 brew install lua
 brew install lynx
+brew install micro
 brew install npm
 brew install p7zip
 brew install pigz
