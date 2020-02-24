@@ -120,3 +120,14 @@ alias gaycat="toilet --gay -f term"
 
 # Random Cowfile
 alias cowsay_rand='cowsay -f `cowsay -l | tail -n +2 | tr " " "\n" | shuf -n 1`'
+
+# Brew Alises
+alias bs='brew search'
+alias bsd='brew search --desc'
+alias bi='brew info'
+alias brewup='brew upgrade && brew cleanup'
+alias bis='brew install'
+alias cask='brew cask'
+alias ci='brew cask info'
+alias casks='brew search --casks'
+alias cis='brew cask install'
