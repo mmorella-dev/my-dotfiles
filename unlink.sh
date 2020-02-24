@@ -37,7 +37,7 @@ function do_unlink {
   
     if [[ $DELETE == 1 ]]; then
       rm -f ~/"$file"
-	  echo -e "\e[31mDeleted $file from home directory.\e[0m"
+	  echo -e "\e[31mDeleted symlink $file from home directory.\e[0m"
 	else 
 	  echo -e "\e[35mUnlinked ~/$file from $DIR_NAME.\e[0m"     
 	  rm -f ~/"$file"
