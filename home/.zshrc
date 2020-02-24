@@ -2,8 +2,8 @@
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 # Functions
-source ~/Scripts/dotfiles/.functions
-source ~/Scripts/dotfiles/.aliases
+source ~/.functions
+source ~/.aliases
 
 # Initialize antigen
 antigen init ~/.antigenrc
