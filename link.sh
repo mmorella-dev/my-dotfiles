@@ -34,13 +34,13 @@ done
 
 if [[ ${#current_links[@]} != 0 ]]; then
   echo -e "The following files are linked already:"
-  printf "\e[1;32m%s\e[0m\n" ${current_links[@]} | column;
+  printf "\e[1;36m%s\e[0m\n" ${current_links[@]} | column;
   echo ""
 fi
 
 if [[ ${#new_links[@]} != 0 ]]; then
   echo -e "The following links will be created in $HOME:"
-  printf "\e[1;36m%s \e[0m\n" ${new_links[@]} | column
+  printf "\e[1;32m%s \e[0m\n" ${new_links[@]} | column
   echo ""
 fi
 
