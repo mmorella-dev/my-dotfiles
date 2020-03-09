@@ -8,16 +8,21 @@ antigen bundle common-aliases
 antigen bundle brew
 antigen bundle git
 antigen bundle vscode
-antigen bundle pip
+antigen bundle pipl
 antigen bundle z
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-completions
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme.
+# Prompt Theme: Spaceship
 antigen theme denysdovhan/spaceship-prompt
+
+#SPACESHIP_TIME_SHOW="true"
+#SPACESHIP_TIME_12HR="true"
+#SPACESHIP_TIME_FORMAT="%t"
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that you're done.
 antigen apply
