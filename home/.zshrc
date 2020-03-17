@@ -8,6 +8,10 @@ source /usr/local/share/antigen/antigen.zsh
 source ~/.functions
 source ~/.aliases
 
+
+# iterm2 Shell Integrations
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # Initialize antigen
 antigen init ~/.antigenrc
 
@@ -17,6 +21,3 @@ antigen init ~/.antigenrc
 # Completion system
 #fpath=(/usr/local/share/zsh-completions $fpath)
 #autoload -Uz compinit && compinit -u
-
-# iterm2 Shell Integrations
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
