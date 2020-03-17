@@ -48,6 +48,7 @@ brew cask install retroarch
 brew cask install openmw
 brew cask install steam
 brew cask install mgba
+brew cask install openemu
 
 # Fonts
 brew tap homebrew/cask-fonts
