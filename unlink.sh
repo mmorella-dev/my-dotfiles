@@ -22,8 +22,8 @@ if [[ ${#links[@]} != 0 ]]; then
     echo "(Use --delete flag to erase these files)"
     printf "\e[1;35m~/%s\e[0m\n" ${links[@]} | column;
   else 
-    echo -e "The following symlinks will be permanently deleted."
-    echo -e "\e[1mWARNING: This may break important shell functionality!\e[0m"
+    echo -e "The following symlinks will be removed from your home directory."
+    printf "\e[1mWARNING: This may break important shell functionality!\e[0m\n"
     printf "\e[1;31m~/%s\e[0m\n" ${links[@]} | column;
   fi
     echo ""
@@ -37,9 +37,9 @@ function do_unlink {
   
     if [[ $DELETE == 1 ]]; then
       rm -f ~/"$file"
-	  echo -e "\e[31mDeleted symlink $file from home directory.\e[0m"
+	  printf "\e[31mDeleted symlink $file from home directory.\e[0m\n"
 	else 
-	  echo -e "\e[35mUnlinked ~/$file from $DIR_NAME.\e[0m"     
+	  printf "\e[35mUnlinked ~/$file from $DIR_NAME.\e[0m\n"     
 	  rm -f ~/"$file"
 	  cp -f "$file" ~/"$file"
 	fi

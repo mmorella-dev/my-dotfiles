@@ -51,10 +51,10 @@ if [[ ${#protected_links[@]} != 0 ]] || [[ ${#protected_files[@]} != 0 ]] ; then
     echo -e "The following files WILL be overwritten (This cannot be undone!):"
   fi
   for file in ${protected_links[@]}; do
-    echo -e "\e[1;31m~/${file} (linked to $(readlink ~/"$file"))\e[0m"
+    printf "\e[1;31m~/${file} (linked to $(readlink ~/"$file"))\e[0m\n"
   done;
   for file in ${protected_files[@]}; do
-    echo -e "\e[1;31m~/${file}\e[0m"
+    printf "\e[1;31m~/${file}\e[0m\n"
   done;
 fi
 
@@ -67,7 +67,7 @@ if [[ ${#new_links[@]} != 0 ]]; then
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 	  for file in ${new_links[@]}; do
 	    ln -sf $PWD/$file ~/"$file"
-	    echo -e "\e[32mCreated link from $file to ~/$file"	    	
+	    printf "\e[32mCreated link from $file to ~/$file\e[0m\n"	    	
 	  done
 	fi
 fi
