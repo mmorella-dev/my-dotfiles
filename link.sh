@@ -33,36 +33,33 @@ for file in .[^.]*; do
 done
 
 if [[ ${#current_links[@]} != 0 ]]; then
-  echo -e "The following files are linked already:"
+  printf "The following files are linked already:\n"
   printf "\e[1;36m%s\e[0m\n" ${current_links[@]} | column;
-  echo ""
+  printf "\n"
 fi
 
 if [[ ${#new_links[@]} != 0 ]]; then
-  echo -e "The following links will be created in $HOME:"
+  printf "The following links will be created in $HOME:\n"
   printf "\e[1;32m%s \e[0m\n" ${new_links[@]} | column
-  echo ""
+  printf "\n"
 fi
 
 if [[ ${#protected_links[@]} != 0 ]] || [[ ${#protected_files[@]} != 0 ]] ; then
   if [[ $force != 1 ]]; then
-    echo -e "The following files already exist. (Use --force to overwrite):"
+    printf "The following files already exist: (Use --force to overwrite)\n"
   else
-    echo -e "The following files WILL be overwritten (This cannot be undone!):"
+    printf "The following files WILL be overwritten: (This cannot be undone!)\n"
   fi
-  for file in ${protected_links[@]}; do
-    printf "\e[1;31m~/${file} (linked to $(readlink ~/"$file"))\e[0m\n"
-  done;
-  for file in ${protected_files[@]}; do
-    printf "\e[1;31m~/${file}\e[0m\n"
-  done;
+  printf "\e[1;31m%s\e[0m\n" ${protected_files[@]} | column;
+  printf "\e[1;31m%s\e[0m\n" ${protected_links[@]} | column;
 fi
 
 if [[ ${#new_links[@]} != 0 ]]; then
 	
 	while [[ ! $REPLY =~ [Yy]$ ]] && [[ ! $REPLY =~ [Nn]$ ]]; do
-	  read -p "Are you sure you want to continue? [y/n]" -n 1
-	  echo ""
+    printf "Are you sure you want to continue? [y/n] "
+	  read -n 1 REPLY
+	  printf "\n"
 	done
 	if [[ ! $REPLY =~ ^[Nn]$ ]]; then
 	  for file in ${new_links[@]}; do
