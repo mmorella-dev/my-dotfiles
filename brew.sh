@@ -42,17 +42,32 @@ brew install gnu-sed
 brew install zsh
 brew install antigen
 
+# Install fish shell
+brew install fish
+
 # Switch to using brew-installed zsh
 if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
   echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
   chsh -s "${BREW_PREFIX}/bin/zsh";
 fi;
 
+
 # Install `wget` with IRI support.
 brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
+
+
+# Install fun utilities
+brew install micro
+brew install cowsay
+brew install toilet
+brew install figlet
+brew install lolcat
+brew install fortune
+brew install cmatrix
+brew install neofetch
 
 # Install more recent versions of some macOS tools.
 brew install vim
@@ -61,12 +76,6 @@ brew install openssh
 brew install screen
 brew install php
 brew install gmp
-
-# Install font tools.
-# brew tap bramstein/webfonttools
-# brew install sfnt2woff
-# brew install sfnt2woff-zopfli
-# brew install woff2
 
 # Install other useful binaries.
 brew install ack
@@ -87,15 +96,6 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
-
-# Install fun utilities
-brew install cowsay
-brew install toilet
-brew install figlet
-brew install lolcat
-brew install fortune
-brew install cmatrix
-brew install neofetch
 
 # Remove outdated formulae.
 brew cleanup
