@@ -10,6 +10,7 @@ brew cask install marshallofsound-google-play-music-player
 # Visual Studio Code
 brew cask install visual-studio-code
 # Temporarily add code shell integration, and install Settings Sync
+
 alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
 code --install-extension Shan.code-settings-sync
 
@@ -41,15 +42,6 @@ brew cask install discord
 brew cask install typora
 brew cask install qbittorent
 
-
-# Games
-brew cask install minecraft
-brew cask install retroarch
-brew cask install openmw
-brew cask install steam
-brew cask install mgba
-brew cask install openemu
-
 # Fonts
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
@@ -63,3 +55,11 @@ brew cask install font-roboto
 
 # Aerial Screensaver
 brew cask install aerial
+
+# Games
+brew cask install minecraft
+brew cask install retroarch
+brew cask install openmw
+brew cask install steam
+brew cask install mgba
+brew cask install openemu
