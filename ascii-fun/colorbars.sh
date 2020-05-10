@@ -35,6 +35,4 @@ cat << EOF
  ${redf}▆▆▆▆▆▆▆▆▆▆${reset} ${greenf}▆▆▆▆▆▆▆▆▆▆${reset} ${yellowf}▆▆▆▆▆▆▆▆▆▆${reset} ${bluef}▆▆▆▆▆▆▆▆▆▆${reset} ${purplef}▆▆▆▆▆▆▆▆▆▆${reset} ${cyanf}▆▆▆▆▆▆▆▆▆▆${reset} ${whitef}▆▆▆▆▆▆▆▆▆▆${reset}
  ${boldon}${blackf} ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::${reset}
  ${boldon}${redf}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${greenf}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${yellowf}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${bluef}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${purplef}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${cyanf}▆▆▆▆▆▆▆▆▆▆${reset} ${boldon}${whitef}▆▆▆▆▆▆▆▆▆▆${reset}
-
-
 EOF

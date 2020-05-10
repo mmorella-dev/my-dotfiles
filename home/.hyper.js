@@ -52,6 +52,7 @@ module.exports = {
     // border color (window, tabs)
     borderColor: '#333',
 
+
     // custom CSS to embed in the main window
     css: '',
 
@@ -138,13 +139,14 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: true,
+    webGLRenderer: false,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     hyperTabs: {
-      border: false,
       trafficButtons: true,
+      tabIconsColored: true,
+      border: true
     },
 
     hyperMonokaiPro: {
@@ -158,7 +160,11 @@ module.exports = {
     paneNavigation: {
       showIndicators: false,
       focusOnMouseHover: true,
-    }
+    },
+    hyperTransparentVibrancy: {
+      alpha: 0.8, // default 50%
+      vibrancy: 'dark'
+    },
   },
 
   modifierKeys: { altIsMeta: true },
@@ -172,22 +178,24 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hyperpower",
-    "hyper-quit", 
-    "hypercwd", 
-    "hyper-font-ligatures", 
-    "hyper-command-gifs", 
-    "hyper-monokai-pro",
-    "hyper-pane",
+    // "hyperpower",
+    "hyper-quit",
+    "hypercwd",
+    "hyper-font-ligatures",
+    // "hyper-pane",
     "hyperlinks",
     "hyperinator",
-    "htyt"
+    "hyper-monokai-pro",
+    "hyper-tabs-enhanced",
+    "hyper-transparent-vibrancy"
   ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
   localPlugins: [
+    // "hyper-monokai-pro",
+    // "hyper-transparent"
   ],
 
   keymaps: {

@@ -28,3 +28,6 @@ set fish_color_match --background brblue
 
 # homebrew sbin
 set -g fish_user_paths "/usr/local/sbin/" $fish_user_paths
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
