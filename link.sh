@@ -23,12 +23,12 @@ make_links() {
      printf "{$BOLD}{$RED}ERROR: Could not find directory $2{$NOCOL}\n"
     return 1
   fi
-  local source_files=$(find $1 -depth 1 ! -name ".DS_Store")
+  local source_files=$(find $1 -mindepth 1 -maxdepth 1 ! -name ".DS_Store")
   local dest_dir=$2
   for file in $source_files; do
     local path_of_dest_file=$(realpath -s $dest_dir/$(basename $file))
     if [ ! $file -ef $path_of_dest_file ]; then
-      ln -sviF $file $dest_dir
+      ln -sviF $(realpath $file) $dest_dir
     else
       printf "${BOLD}${CYAN}$(realpath --relative-base . $file) is already linked.${NOCOL}\n"
     fi

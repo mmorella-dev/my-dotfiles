@@ -1,5 +1,5 @@
 # use Starship prompt
-starship init fish | source
+command -q starship; and starship init fish | source
 
 # load all scripts under the aliases folder
 for f in (ls ~/.config/fish/aliases/*.fish)
@@ -26,8 +26,8 @@ set fish_color_operator blue
 set fish_color_redirection white
 set fish_color_match --background brblue
 
-# homebrew sbin
-set -g fish_user_paths "/usr/local/sbin/" $fish_user_paths
-
+# if iTerm 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+# Ubuntu Linuxbrew
+test -f /home/linuxbrew/.linuxbrew/bin/brew; and eval (env SHELL=fish /home/linuxbrew/.linuxbrew/bin/brew shellenv)
