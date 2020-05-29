@@ -44,12 +44,13 @@ brew install antigen
 
 # Install fish shell
 brew install fish
+brew install fisher
 
 # Switch to using brew-installed zsh
-if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/zsh";
-fi;
+#if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
+#  echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
+#  chsh -s "${BREW_PREFIX}/bin/zsh";
+#fi;
 
 
 # Install `wget` with IRI support.

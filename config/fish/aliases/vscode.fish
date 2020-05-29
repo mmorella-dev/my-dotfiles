@@ -2,9 +2,9 @@
 # based on MarsiBaris's oh-my-zsh plugin
 
 # If only code-insiders is installed, alias it to code
-if ! command -sq code; and command -sq code-insiders
-      alias code="code-insiders"
-end
+# if ! command -sq code; and command -sq code-insiders
+#      alias code="code-insiders"
+# end
 
 # vsc - if no args, open code in the current directory
 function vsc
