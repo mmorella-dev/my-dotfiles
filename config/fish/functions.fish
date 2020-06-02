@@ -1,20 +1,27 @@
+function __is_macos -d "Returns with exit status 0 if the invoking shell is macOS"
+    test (uname) = "Darwin"
+    return $status
+end
+
+function __is_wsl -d "Returns with exit status 0 if the invoking shell is WSL"
+    test -e /proc/version; and grep -q Microsoft /proc/version
+    return $status
+end
+
+# My functions
+
 function mkd -w "mkdir" -d "Make directory and cd into it."
     mkdir -p $argv; and cd $argv[-1]
 end
 
-# normalize macOS 'open' command
-# required for o to work on other platforms
-if ! command -q open
-    if grep -q Microsoft /proc/version
-        alias open="explorer.exe"
-    else if command -q xdg-open
-        alias open='xdg-open'
-    end
+# On WSL systems, alias "open" to use explorer.exe
+if __is_wsl
+    alias open="explorer.exe"
 end
 
 function o -d "shorthand for open. if no args, opens current dir." -w "open"
     test $argv; or set argv .
-    open .
+    open $argv
 end
 
 
@@ -53,7 +60,7 @@ function tre -w "tree" -d "Pretty 'tree' with sensible defaults."
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst $argv | less -FRNX
 end
 
-test (uname) = "Darwin"; or exit # detect system is macOS, or stop here
+__is_macos; or exit # detect system is macOS, or stop here
 
 #### MACOS ONLY FUNCTIONS ####
 
