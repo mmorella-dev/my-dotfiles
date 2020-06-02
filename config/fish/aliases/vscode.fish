@@ -7,12 +7,12 @@
 # end
 
 # vsc - if no args, open code in the current directory
-function vsc
-  if [ (count $argv) -eq 0 ]
-    code .
-  else
-    code $argv
-  end
+function vsc -d "alias 'code .' if no args, use curent dir" -w "code"
+    if count $argv >/dev/null
+        code $argv
+    else
+        code .
+    end
 end
 
 alias vsca="code --add"
