@@ -16,8 +16,12 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>BracketedPasteMode</key>
+	<true/>
 	<key>CGFontRenderingFontSmoothingDisabled</key>
 	<false/>
+	<key>ConvertDosNewlines</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Monokai Pro</key>
@@ -715,6 +719,8 @@
 	<true/>
 	<key>EnableDivisionView</key>
 	<true/>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>FocusFollowsMouse</key>
 	<true/>
 	<key>HapticFeedbackForEsc</key>
@@ -795,11 +801,11 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 149 224 275 0 0 1920 1057 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>299 305 841 470 0 0 1440 877 </string>
+	<string>299 321 841 470 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>745 133 1107 657 0 0 1920 1057 </string>
+	<string>15 294 864 543 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>199 207 750 543 0 0 1440 877 </string>
+	<string>621 393 514 344 0 0 1440 877 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -819,14 +825,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.16078431372549021</real>
+				<real>0.2308197021484375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.11372549019607843</real>
+				<real>0.16326271171886739</real>
 				<key>Red Component</key>
-				<real>0.10980392156862745</real>
+				<real>0.15763296340773225</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -973,14 +981,16 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.16862745098039217</real>
+				<real>0.7133941650390625</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12156862745098039</real>
+				<real>0.5143074159586154</real>
 				<key>Red Component</key>
-				<real>0.11764705882352941</real>
+				<real>0.4977168562732267</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1643,6 +1653,8 @@
 			<false/>
 			<key>Silence Bell</key>
 			<true/>
+			<key>Smart Cursor Color</key>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1662,7 +1674,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Cursor Guide</key>
 			<false/>
 			<key>Use Custom Window Title</key>
@@ -1696,16 +1708,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{252, 741}</string>
+		<string>{144, 728}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>465A0671-A0F0-4160-8213-1AA244389327</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>45</integer>
+	<integer>63</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2474,6 +2486,12 @@
 	<false/>
 	<key>OptionIsMetaForSpecialChars</key>
 	<true/>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>2</integer>
 	<key>PerPaneBackgroundImage</key>
@@ -2530,7 +2548,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-28T21:26:43Z</date>
+	<date>2020-06-02T23:15:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -2561,7 +2579,7 @@
 	<true/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Profiles</string>
+		<string>Recent Directories</string>
 	</array>
 	<key>UseBorder</key>
 	<false/>
@@ -2576,7 +2594,7 @@
 	<key>iTerm Version</key>
 	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
