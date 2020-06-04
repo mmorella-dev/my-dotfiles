@@ -19,9 +19,12 @@ if __is_wsl
     alias open="explorer.exe"
 end
 
-function o -d "shorthand for open. if no args, opens current dir." -w "open"
-    test $argv; or set argv .
-    open $argv
+function o --w open --d 'shorthand for open. if no args, opens current dir.'
+    if test (count $argv) -gt 0
+        open $argv
+    else
+        open .
+    end
 end
 
 

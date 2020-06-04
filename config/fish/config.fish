@@ -2,12 +2,12 @@
 command -q starship; and starship init fish | source
 
 # load all scripts under the aliases folder
-for f in (ls ~/.config/fish/aliases/*.fish)
+for f in $__fish_config_dir/aliases/*.fish
     source "$f"
 end
 
-# load functions.fish, and functions_macos.fish if the system is macos
-source ~/.config/fish/functions.fish
+# load functions.fish
+source $__fish_config_dir/functions.fish
 
 # remove startup message
 set fish_greeting
@@ -28,6 +28,7 @@ set fish_color_end cyan
 set fish_color_param white
 set fish_color_operator blue
 set fish_color_redirection white
+set fish_color_selection cyan --background black
 set fish_color_match --background brblue
 
 # if iTerm2 shell integration scripts exist, execute them.
