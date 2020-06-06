@@ -23,7 +23,7 @@ make_links() {
      printf "{$BOLD}{$RED}ERROR: Could not find directory $2{$NOCOL}\n"
     return 1
   fi
-  local source_files=$(realpath $(find $1 -maxdepth 1 ! -name ".DS_Store"))
+  local source_files=$(realpath $(find $1 -mindepth 1 -maxdepth 1 ! -name ".DS_Store"))
   local dest_dir=$(realpath $2)
   for file in $source_files; do
     local path_of_dest_file=$(realpath -s $dest_dir/$(basename $file))
