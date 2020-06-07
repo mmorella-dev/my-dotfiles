@@ -39,3 +39,4 @@ make_links() {
 
 make_links ./home/ $HOME
 make_links ./config/ $HOME/.config/
+make_links ./fish/ $HOME/.config/fish/
