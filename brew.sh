@@ -8,7 +8,9 @@ if [[ "${?}" -ne 0 ]] && [ "$(uname)" == "Darwin" ]; then
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Install Command-line Utils and Homebrew
+    echo "Attempting to install Command Line Tools..."
     xcode-select --install
+    echo "Attempting to install Homebrew..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     exit 1
   else
@@ -26,6 +28,10 @@ brew upgrade
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
+# Install fish shell
+brew install fish
+brew install fisher
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -42,15 +48,11 @@ brew install gnu-sed
 brew install zsh
 brew install antigen
 
-# Install fish shell
-brew install fish
-brew install fisher
-
 # Switch to using brew-installed zsh
-#if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
-#  echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
-#  chsh -s "${BREW_PREFIX}/bin/zsh";
-#fi;
+if ! fgrep -q "${BREW_PREFIX}/bin/fish" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/fish" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/fish";
+fi;
 
 
 # Install `wget` with IRI support.
