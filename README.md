@@ -2,7 +2,7 @@
 
 ## Beautiful dotfiles for beautiful people
 
-Amateur configuration for my own personal installation of macOS and Fish. These are sunstable, and you probably shouldn't use these.
+Amateur configuration for my own personal installation of macOS and Fish. These are unstable, and you probably shouldn't use these.
 
 ### Terminal Theme
 
@@ -125,3 +125,11 @@ Port of Oh My Zsh's [vscode plugin](https://github.com/ohmyzsh/ohmyzsh/tree/mast
 * `vsca` - `code -add`
 
 * `vscn` - `code --new-window`
+
+### Credits
+
+This repository is a (heavily modified) fork of [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
+
+"Hungry Prideladies" (wallpaper used in lionfetch.conf) belongs to [NummyNumz](https://twitter.com/nummynumz) *(warning: this artist posts semi-NSFW content)*
+
+"Neon Sunset" (wallpaper used in cyberfetch.conf) belongs to [AxiomDesign](https://www.deviantart.com/axiomdesign)
