@@ -2,7 +2,7 @@
 
 ## Beautiful dotfiles for beautiful people
 
-Amateur configuration for my own personal installation of macOS and Fish. These are unstable, and you probably shouldn't use these.
+Amateur configuration for my own personal installation of macOS and Fish. This repository is highly unstable, and you probably shouldn't use it in its entirety.
 
 ### Terminal Theme
 
