@@ -1,44 +1,26 @@
 #!/usr/bin/env bash
 
-# Google Chrome
+# Disable gatekeeper for all cask installs.
+# This is slightly dangerous, so be careful when adding new casks to this file.
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+
 brew cask install google-chrome
-
-
-# Google Play Music Desktop Player
-brew cask install marshallofsound-google-play-music-player
-
-# Visual Studio Code
-brew cask install visual-studio-code
-# Temporarily add code shell integration, and install Settings Sync
-
-alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
-code --install-extension Shan.code-settings-sync
-
-# iTerm 2
 brew cask install iterm2
-
-# Install iTerm 2 Shell Integration 
-curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+brew cask install spotify
+brew cask install marshallofsound-google-play-music-player
+brew cask install vlc
+brew cask install discord
 
 # The Unarchiver
 brew cask install the-unarchiver
 
-# Private Internet Access VPN
-brew cask install private-internet-access
-
-# Google Backup and Sync
-brew cask install google-backup-and-sync
-
-# VLC
-brew cask install vlc
-
 # Hyper Terminal
 brew cask install hyper
 
-# Discord
-brew cask install discord
-
 # Productivity
+brew cask install visual-studio-code
+brew cask install private-internet-access
+brew cask install google-backup-and-sync
 brew cask install typora
 brew cask install qbittorent
 
@@ -51,7 +33,6 @@ brew cask install font-hack
 brew cask install font-hasklig
 brew cask install font-monoid
 brew cask install font-roboto
-
 
 # Aerial Screensaver
 brew cask install aerial
