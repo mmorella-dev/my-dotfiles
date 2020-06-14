@@ -43,9 +43,6 @@ Contains configured neofetch files. Access using `neofetch --config /full/path/t
 ##### cyberfetch.conf
 ![cyberfetch screenshot](https://i.imgur.com/0WAQ5os.png)
 
-##### lionfetch.conf
-![lionfetch screenshot](https://i.imgur.com/uSeraBG.png)
-
 #### config/iterm2
 
 Configuration plist and colors for iTerm2 terminal emulator.
@@ -130,6 +127,5 @@ Port of Oh My Zsh's [vscode plugin](https://github.com/ohmyzsh/ohmyzsh/tree/mast
 
 This repository is a (heavily modified) fork of [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
 
-"Hungry Prideladies" (wallpaper used in lionfetch.conf) belongs to [NummyNumz](https://twitter.com/nummynumz) *(warning: this artist posts semi-NSFW content)*
 
 "Neon Sunset" (wallpaper used in cyberfetch.conf) belongs to [AxiomDesign](https://www.deviantart.com/axiomdesign)
