@@ -22,6 +22,8 @@
 	<false/>
 	<key>ConvertDosNewlines</key>
 	<true/>
+	<key>CopyLastNewline</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Monokai Pro</key>
@@ -965,6 +967,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>3B0A004E-7A04-4454-B99D-A392E8AF5255</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
 	<true/>
 	<key>DimOnlyText</key>
@@ -988,7 +992,7 @@
 	<key>HideTab</key>
 	<false/>
 	<key>HideTabNumber</key>
-	<true/>
+	<false/>
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
@@ -1033,7 +1037,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -1061,7 +1065,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 378 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>12 304 765 543 0 0 1440 877 </string>
+	<string>0 0 1434 885 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>526 152 765 543 0 0 1440 877 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -1075,10 +1079,22 @@
 			<true/>
 			<key>ASCII Ligatures</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>Recycle</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>Recycle</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Allow Title Setting</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1362,7 +1378,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Advanced</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1962,12 +1978,16 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{263, 716}</string>
+		<string>{224, 810}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -1976,7 +1996,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>465A0671-A0F0-4160-8213-1AA244389327</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>96</integer>
+	<integer>99</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2817,7 +2837,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-11T00:17:39Z</date>
+	<date>2020-06-15T02:50:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -2829,13 +2849,17 @@
 	<key>SeparateWindowTitlePerTab</key>
 	<false/>
 	<key>ShowPaneTitles</key>
-	<false/>
+	<true/>
+	<key>SmartPlacement</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SpacelessApplicationSupport</key>
 	<string></string>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.14740137411347518</real>
+	<real>0.20692320478723403</real>
+	<key>StatusBarPosition</key>
+	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>TabStyleWithAutomaticOption</key>
@@ -2861,7 +2885,7 @@
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
-	<true/>
+	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
