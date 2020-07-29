@@ -68,8 +68,13 @@ __is_macos; or exit # detect system is macOS, or stop here
 #### MACOS ONLY FUNCTIONS ####
 
 
-function cdf --d "Open the directory of the topmost Finder window"
-    cd (osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')
+function cdf --description 'Open the directory of the topmost Finder window'
+    set -l finder_dir (osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')
+    if test "$argv" = "-p"
+      echo $finder_dir
+    else
+      cd $finder_dir
+    end
 end
 
 function cleanup -d "Recursively remove .DS_Store files from a directory"
