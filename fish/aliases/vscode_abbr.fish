@@ -11,6 +11,7 @@ function vsc -w "code" -d "shortcut for VS Code. if no arguments, use current di
     for arg in $argv
         if string match -v -- '-*' $arg > /dev/null
           code $argv
+	  return 0
         end
     end
     code $argv .
