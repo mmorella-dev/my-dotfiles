@@ -6,7 +6,7 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-echo "This script will modify many system settings. You should read"
+echo "This script will modify many system settings. You should probably read the contents of this file before executing to see what all it does."
 
 # Ask for the administrator password upfront
 sudo -v
