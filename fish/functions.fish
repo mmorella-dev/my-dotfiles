@@ -39,20 +39,6 @@ function dataurl -d "Generate a base64 dataurl for a file."
     end
 end
 
-# print lines from STDIN in a rainbow colors. 
-function rainbow_cat
-    set -l colors red blue yellow green cyan magenta
-    set -l i (random 1 (count $colors))
-    cat /dev/stdin | while read line
-        set_color $colors[$i]
-        echo "$line"
-        set i (math "$i + 1")
-        if test $i -gt (count $colors)
-            set i 1
-        end
-    end
-end
-
 # reload shell (i.e. invoke as login shell)
 function reload -w "$SHELL" -d "Reload shell (invoke as new login shell)"
     exec $SHELL -l
@@ -67,13 +53,12 @@ __is_macos; or exit # detect system is macOS, or stop here
 
 #### MACOS ONLY FUNCTIONS ####
 
-
-function cdf --description 'Open the directory of the topmost Finder window'
+function cdf --description 'Open the directory of the topmost Finder window. `cdf -p` prints this path instead.'
     set -l finder_dir (osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')
     if test "$argv" = "-p"
-      echo $finder_dir
+        echo $finder_dir
     else
-      cd $finder_dir
+        cd $finder_dir
     end
 end
 
@@ -101,6 +86,18 @@ function show_hidden_files --description="Enable showing hidden files in Finder"
     end
 end
 complete -c show_hidden_files -x -a "true false"
+
+function empty_trash -d "Empty the Trash on all mounted volumes and the main HDD. Also erase Apple system logs."
+    echo This will permanently empty the trash on all mounted volumes. It will also erase Apple system logs.
+    sudo -v
+    echo Emptying trash...
+    sudo rm -rfv /Volumes/*/.Trashes
+    sudo rm -rfv ~/.Trash
+    echo Removing system logs...
+    sudo rm -rfv /private/var/log/asl/*.asl
+    sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+end
+
 
 # Alias to plistbuddy
 alias plistbuddy="/usr/libexec/PlistBuddy"
