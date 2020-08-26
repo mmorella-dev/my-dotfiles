@@ -1,20 +1,11 @@
 # use Starship prompt
 command -q starship; and starship init fish | source
 
-# load all scripts under the aliases folder
-for f in $__fish_config_dir/aliases/*.fish
-    source "$f"
-end
-
-# load functions.fish
-source $__fish_config_dir/functions.fish
-
 # remove startup message
 set fish_greeting
 
 # use zsh ls colors
 set -x LSCOLORS Gxfxcxdxbxegedabagacad
-
 # use zsh-syntax-highlighting color palette
 # (use shell ANSI colors rather than custom)
 set fish_color_command green
@@ -36,3 +27,12 @@ test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell
 
 # Ubuntu Linuxbrew
 test -f /home/linuxbrew/.linuxbrew/bin/brew; and eval (env SHELL=fish /home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# load functions.fish
+source $__fish_config_dir/functions.fish
+source $__fish_config_dir/abbrevs.fish
+
+# load all scripts under the aliases folder
+for f in $__fish_config_dir/aliases/*.fish
+    source "$f"
+end
