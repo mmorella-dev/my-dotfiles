@@ -1,32 +1,31 @@
 # my-dotfiles
 
+![terminal screenshot](https://i.imgur.com/b43g3X1.png)
+
 ## Beautiful dotfiles for beautiful people
 
 Amateur configuration for my own personal installation of macOS and Fish. This repository is highly unstable, and you probably shouldn't use it in its entirety.
 
 ### Terminal Theme
 
-Font - [Fira Code](https://github.com/tonsky/FiraCode)
+- Font: [Fira Code](https://github.com/tonsky/FiraCode)
+- Prompt: [Starship](https://github.com/starship/starship), a beautiful cross-shell pompt based on denysdovhan's [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt) for zsh.
+- Color Scheme: [octagon.itermcolors](config/iterm2/octagon.itermcolors), inspired by [Monokai Pro](https://monokai.pro/).
+- Fish Colors: [config.fish](fish/config.fish), based on the default look of [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-Prompt - [Starship](https://github.com/starship/starship), a beautiful cross-shell pompt based on denysdovhan's [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt) for zsh.
-
-Color Scheme: [octagon.itermcolors](config/iterm2/octagon.itermcolors), ported from [Monokai Pro](https://monokai.pro/).
-
-* If you want these colors, you can import the iTerm2 scheme into [terminal.sexy](https://terminal.sexy).
-
-Fish Colors: [config.fish](fish/config.fish), based on the default look of [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+If you want to use these colors in another shell, you can import [the itermcolors file](config/iterm2/octagon.itermcolors) into [terminal.sexy](https://terminal.sexy).
 
 ### What's here?
 
 #### ascii-fun/
 
-![terminal screenshot](https://i.imgur.com/JjJyvJm.png)
+![screenshot of ascii pacman](https://i.imgur.com/JjJyvJm.png)
 
 A small collection of scripts which draw colored ASCII artwork, for showing off your sexy terminal theme. Most of these aren't mine.
 
 #### link.fish
 
-![terminal screenshot](https://i.imgur.com/Lt8uzjf.png)
+![screenshot of link.fish executing](https://i.imgur.com/Lt8uzjf.png)
 
 A slightly over-engineered (but pretty) script which creates symlinks to these dotfiles. The instructions at the end of the file declare which directories should be linked.
 
@@ -79,11 +78,11 @@ macOS Exclusive Functions:
 
 * `c` - Trim newlines and copy STDIN to clipboard.
 
-#### fish/aliases
+#### fish/abbrevs.fish
 
-##### brew.fish
+##### brew abbreviations
 
-Port of Oh My Zsh's [brew plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew). Declares shorthand aliases like:
+Port of Oh My Zsh's [brew plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew). Shorthand abbrevs like:
 
 * `bi` - `brew info`
   
@@ -91,9 +90,9 @@ Port of Oh My Zsh's [brew plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master
   
 * `cis` - `brew cask install`
 
-##### git.fish
+##### git abbreviations
 
-Port of Oh My Zsh's [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew). Declares shorthand aliases like 
+Port of Oh My Zsh's [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew). Shorthand abbrevs like 
 
 * `gaa` - `git add --all`
   
@@ -101,7 +100,7 @@ Port of Oh My Zsh's [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/
   
 * `gp` - `git push`
 
-##### emacs_games.fish
+##### emacs_games aliases
 
 ![emacs tetris screenshot](https://i.imgur.com/wnb3aHB.png)
 
@@ -113,7 +112,7 @@ Just for fun. Declares aliases for games built into emacs.
 
 * `snake` - `emacs -f snake`
 
-##### vscode.fish
+##### vscode abbreviations
 
 Port of Oh My Zsh's [vscode plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode).
 
@@ -126,6 +125,5 @@ Port of Oh My Zsh's [vscode plugin](https://github.com/ohmyzsh/ohmyzsh/tree/mast
 ### Credits
 
 This repository is a (heavily modified) fork of [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
-
 
 "Neon Sunset" (wallpaper used in cyberfetch.conf) belongs to [AxiomDesign](https://www.deviantart.com/axiomdesign)
