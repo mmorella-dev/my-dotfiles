@@ -56,7 +56,7 @@ if command -q youtube-dl
   abbr -a -g ytdl youtube-dl 
 end
 
-# emacs games
+# emacs games (just for fun)
 if command -q emacs
     alias emacs_snake="emacs -f snake"
     alias emacs_pong="emacs -f pong"
@@ -204,3 +204,7 @@ if command -q git
 
     abbr -a -g gfp git flow publish
 end
+
+# neofetch shortcuts
+alias lionfetch="neofetch --config $HOME/.config/neofetch/lionfetch.conf"
+alias cyberfetch="neofetch --config $HOME/.config/neofetch/cyberfetch.conf"
