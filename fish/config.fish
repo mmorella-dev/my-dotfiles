@@ -4,10 +4,12 @@ command -q starship; and starship init fish | source
 # remove startup message
 set fish_greeting
 
-# use zsh ls colors
+# use zsh-style ls colors for both BSD and GNU ls
 set -x LSCOLORS Gxfxcxdxbxegedabagacad
-# use zsh-syntax-highlighting color palette
-# (use shell ANSI colors rather than custom)
+set -x LS_COLORS "di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+
+# color palette inspired by zsh-syntax-highlighting 
+# (use shell 16-colors rather than custom)
 set fish_color_command green
 set fish_color_error red --bold
 set fish_color_autosuggestion brblack
@@ -24,9 +26,6 @@ set fish_color_match --background brblue
 
 # if iTerm2 shell integration scripts exist, execute them.
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
-
-# Ubuntu Linuxbrew
-test -f /home/linuxbrew/.linuxbrew/bin/brew; and eval (env SHELL=fish /home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # load functions.fish
 source $__fish_config_dir/functions.fish
