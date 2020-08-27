@@ -11,13 +11,13 @@ if [[ "${?}" -ne 0 ]] && [ "$(uname)" == "Darwin" ]; then
     echo "Attempting to install Command Line Tools..."
     xcode-select --install
     echo "Attempting to install Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
     exit 1
   else
     echo "Exiting..."
     exit 1;
   fi;
-fi 
+fi
 
 # Make sure we’re using the latest Homebrew.
 brew update
