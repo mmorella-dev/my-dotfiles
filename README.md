@@ -6,6 +6,8 @@
 
 Amateur configuration for my own personal installation of macOS and Fish. This repository is highly unstable, and you probably shouldn't use it in its entirety.
 
+There's also some files for Antigen, Zsh, and the Hyper.js terminal emulator, which I no longer use.
+
 ### Terminal Theme
 
 - Font: [Fira Code](https://github.com/tonsky/FiraCode)
