@@ -3,22 +3,18 @@
 # Creates symlinks in system directories
 
 function is_same_file -a path1 path2 -d "Checks if `realpath` resolves two paths to the same file"
-    # attempt to normalize test, prioritizing GNU CoreUtils
-    set test (command -s test)
-    command -q gtest; and set test (command -s gtest)
-    $test $path1 -ef $path2
+    # requires that builtin 'test' command supports `-ef` argument, which fish does not have
+    # this is true for OSX, BSD, and GNU test, but not for POSIX sh
+    command test $path1 -ef $path2
     return $status
 end
 
 function read_confirm
-    while true
-        read -l -n 1 $argv confirm
-        switch $confirm
-            case Y y
-                return 0
-            case '' N n
-                return 1
-        end
+    read -l -n1 -P $argv -- CONFIRM
+    if string match -rq "[Yy]" -- $CONFIRM
+        return 0
+    else
+        return 1
     end
 end
 
