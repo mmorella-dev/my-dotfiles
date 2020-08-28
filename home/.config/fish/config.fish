@@ -26,12 +26,3 @@ set fish_color_match --background brblue
 
 # if iTerm2 shell integration scripts exist, execute them.
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
-
-# load functions.fish
-source $__fish_config_dir/functions.fish
-source $__fish_config_dir/abbrevs.fish
-
-# load all scripts under the aliases folder
-for f in $__fish_config_dir/aliases/*.fish
-    source "$f"
-end
