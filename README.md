@@ -1,10 +1,12 @@
 # my-dotfiles
 
-![terminal screenshot](https://i.imgur.com/b43g3X1.png)
+Beautiful dotfiles for beautiful people
 
-## Beautiful dotfiles for beautiful people
+![terminal screenshot](https://i.imgur.com/V6adKZ9.png) 
 
-Amateur configuration for my own personal installation of macOS and Fish. This repository is highly unstable, and you probably shouldn't use it in its entirety.
+## What's this then?
+
+This repository contains amateur configuration files for managing my installations of macOS and Fish. This repo is highly unstable, and you probably shouldn't use it in its entirety.
 
 There's also some files for Antigen, Zsh, and the Hyper.js terminal emulator, which I no longer use.
 
@@ -25,17 +27,9 @@ If you want to use these colors in another shell, you can import [the itermcolor
 
 A small collection of scripts which draw colored ASCII artwork, for showing off your sexy terminal theme. Most of these aren't mine.
 
-#### link.fish
+#### link.sh
 
-![screenshot of link.fish executing](https://i.imgur.com/Lt8uzjf.png)
-
-A slightly over-engineered (but pretty) script which creates symlinks to these dotfiles. The instructions at the end of the file declare which directories should be linked.
-
-For example, the following line links every top-level file and folder in `my-dotfiles/config` into ~/.config.
-
-```sh
-make_links ./config/{.*,*} $HOME/.config
-```
+Uses `lndir` (from xutils) to shadow-copy the `home/` directory into the system home.
 
 #### config/neofetch
 
