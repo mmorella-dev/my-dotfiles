@@ -7,3 +7,7 @@ find . -type f -name "*.DS_Store" -ls -delete
 
 # deep shadow directory of all dotfiles into $HOME
 lndir $(realpath ./home/) $HOME/
+
+# create ~/.dotfiles, a symlink to this repository
+ln -s $(realpath .) $HOME/.dotfiles
+
