@@ -443,7 +443,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Use custom config, if possible
 if [ -d "$HOME/.config/iterm2" ]; then
   defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-  defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.config/iterm2"
+  defaults write com.googlecode.iterm2 PrefsCustomFolder "~/.dotfiles/iterm2"
 fi
 # Install shell integration
 if ! find ~/.iterm2_shell_integration* > /dev/null; then
