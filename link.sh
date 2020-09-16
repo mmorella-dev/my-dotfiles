@@ -9,5 +9,4 @@ find . -type f -name "*.DS_Store" -ls -delete
 lndir $(realpath ./home/) $HOME/
 
 # create ~/.dotfiles, a symlink to this repository
-ln -s $(realpath .) $HOME/.dotfiles
-
+ln -sfT $(realpath .) $HOME/.dotfiles
