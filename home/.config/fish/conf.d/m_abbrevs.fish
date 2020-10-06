@@ -208,3 +208,7 @@ end
 # neofetch shortcuts
 alias lionfetch="neofetch --config $HOME/.config/neofetch/lionfetch.conf"
 alias cyberfetch="neofetch --config $HOME/.config/neofetch/cyberfetch.conf"
+
+# macOS directory shortcuts
+abbr -a -g dt '~/Desktop'
+abbr -a -g gd '~/Google\ Drive'
