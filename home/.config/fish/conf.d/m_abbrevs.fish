@@ -33,6 +33,7 @@ if not test -n "$VSCODE"
 end
 if command -q "$VSCODE"
     abbr -a -g vsc "$VSCODE ."
+    abbr -a -g vscc "$VSCODE ./*.code-workspace"
     abbr -a -g vsca "$VSCODE --add"
     abbr -a -g vscd "$VSCODE --diff"
     abbr -a -g vscg "$VSCODE --goto"
