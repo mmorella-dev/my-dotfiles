@@ -14,6 +14,7 @@ if command -q brew
     abbr -a -g bi 'brew info'
     abbr -a -g brewup 'brew upgrade; and brew cleanup'
     abbr -a -g bis 'brew install'
+    abbr -a -g bish 'brew install --HEAD'
     abbr -a -g cask 'brew cask'
     abbr -a -g ci 'brew cask info'
     abbr -a -g casks 'brew search --casks'
