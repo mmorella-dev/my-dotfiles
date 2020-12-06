@@ -6,20 +6,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>BracketedPasteMode</key>
 	<true/>
-	<key>CGFontRenderingFontSmoothingDisabled</key>
-	<false/>
 	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>CopyLastNewline</key>
@@ -1072,14 +1060,16 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<false/>
 	<key>HideTabNumber</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
 	<integer>32</integer>
 	<key>HotkeyCode</key>
@@ -1092,6 +1082,7 @@
 	<integer>4</integer>
 	<key>LeftCommand</key>
 	<integer>7</integer>
+<<<<<<< Updated upstream
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
@@ -1153,6 +1144,8 @@
 	<string>630 137 750 619 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>526 152 765 543 0 0 1440 877 </string>
+=======
+>>>>>>> Stashed changes
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1995,7 +1988,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 15</string>
+			<string>FiraCodeNerdFontCompleteM-Regular 15</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Toolbelt</key>
@@ -2016,6 +2009,8 @@
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
+			<key>Scrollback in Alternate Screen</key>
+			<true/>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -2065,7 +2060,7 @@
 			<key>Title Components</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.16855369606598986</real>
+			<real>0.27060416310103896</real>
 			<key>Unicode Version</key>
 			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
@@ -2098,6 +2093,7 @@
 			<string>/Users/maxmorella</string>
 		</dict>
 	</array>
+<<<<<<< Updated upstream
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.9</string>
@@ -2916,9 +2912,15 @@
 	<integer>0</integer>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>610830824.97857594</real>
+=======
+>>>>>>> Stashed changes
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
 	<key>OpenBookmark</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OptionIsMetaForSpecialChars</key>
 	<true/>
@@ -2965,8 +2967,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PrefsCustomFolder</key>
-	<string>~/.dotfiles/iterm2/</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<false/>
 	<key>Print In Black And White</key>
@@ -2977,6 +2977,7 @@
 	<true/>
 	<key>RightCommand</key>
 	<integer>8</integer>
+<<<<<<< Updated upstream
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2995,6 +2996,8 @@
 	<integer>1950467330</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
+=======
+>>>>>>> Stashed changes
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>SeparateWindowTitlePerTab</key>
@@ -3041,8 +3044,6 @@
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
-	<key>iTerm Version</key>
-	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
