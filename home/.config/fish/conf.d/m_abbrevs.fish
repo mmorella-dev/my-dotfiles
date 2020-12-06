@@ -214,3 +214,9 @@ alias cyberfetch="neofetch --config $HOME/.config/neofetch/cyberfetch.conf"
 # macOS directory shortcuts
 abbr -a -g dt '~/Desktop'
 abbr -a -g gd '~/Google\ Drive'
+
+# Go back to ~ and clear screen
+abbr -a -g cdcl 'cd && clear'
+
+# kill all background jobs
+abbr -a -g killj 'kill (jobs -p)'
