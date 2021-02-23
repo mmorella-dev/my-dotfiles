@@ -15,12 +15,12 @@ if command -q brew
     abbr -a -g brewup 'brew upgrade; and brew cleanup'
     abbr -a -g bis 'brew install'
     abbr -a -g bish 'brew install --HEAD'
-    abbr -a -g cask 'brew cask'
-    abbr -a -g ci 'brew cask info'
+    abbr -a -g cask 'brew --cask'
+    abbr -a -g ci 'brew info --cask'
     abbr -a -g casks 'brew search --casks'
     abbr -a -g cs 'brew search --casks'
     abbr -a -g csd 'brew search --casks --desc'
-    abbr -a -g cis 'brew cask install'
+    abbr -a -g cis 'brew install --cask'
 end
 
 # vscode abbreviations
