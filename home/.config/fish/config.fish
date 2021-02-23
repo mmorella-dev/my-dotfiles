@@ -26,3 +26,16 @@ set fish_color_match --background brblue
 
 # if iTerm2 shell integration scripts exist, execute them.
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+
+# Put executables in path
+set -g fish_user_paths "~/.gem/2.6.0/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/findutils/libexec/gnubin" $fish_user_paths
+
+set -g fish_user_paths (go env GOPATH)/bin $fish_user_paths
+
+
+# pyenv init
+if command -v pyenv 1>/dev/null 2>&1
+  pyenv init - | source
+end
