@@ -1,12 +1,9 @@
-# use Starship prompt
-command -q starship; and starship init fish | source
-
-# remove startup message
-set fish_greeting
+# UNIVERSAL VARIABLES
+# ===================
 
 # use zsh-style ls colors for both BSD and GNU ls
-set -x LSCOLORS Gxfxcxdxbxegedabagacad
-set -x LS_COLORS "di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+# set -x LSCOLORS Gxfxcxdxbxegedabagacad
+# set -x LS_COLORS "di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
 # color palette inspired by zsh-syntax-highlighting 
 # (use shell 16-colors rather than custom)
@@ -24,18 +21,24 @@ set fish_color_redirection white
 set fish_color_selection cyan --background black
 set fish_color_match --background brblue
 
-# if iTerm2 shell integration scripts exist, execute them.
-test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+# iTerm2 Shell Integrations
+# =========================
+# test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
 
-# Put executables in path
-set -g fish_user_paths "~/.gem/2.6.0/bin" $fish_user_paths
+# Fisher (install if not installed)
+# =================================
+# not functions -q fisher; and not test -e $__fish_config_dir/functions/fisher.fish; and curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+# PUT BINARIES IN PATH
+# ====================
 set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/findutils/libexec/gnubin" $fish_user_paths
-
 set -g fish_user_paths (go env GOPATH)/bin $fish_user_paths
 
-
 # pyenv init
-if command -v pyenv 1>/dev/null 2>&1
-  pyenv init - | source
-end
+# ==========
+command -q pyenv; and pyenv init - | source
+
+# use Starship prompt
+# ===================
+command -q starship; and starship init fish | source
