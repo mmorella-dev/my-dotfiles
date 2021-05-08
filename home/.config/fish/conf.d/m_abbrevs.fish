@@ -220,3 +220,7 @@ abbr -a -g cdcl 'cd && clear'
 
 # kill all background jobs
 abbr -a -g killj 'kill (jobs -p)'
+
+if command -q grep
+  abbr -a -g grepi 'grep -i'
+end

@@ -30,7 +30,6 @@ BREW_PREFIX=$(brew --prefix)
 
 # Install fish shell
 brew install fish
-brew install fisher
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -45,8 +44,8 @@ brew install findutils
 brew install gnu-sed
 
 # Install zsh and antigen
-brew install zsh
-brew install antigen
+# brew install zsh
+# brew install antigen
 
 # Switch to using brew-installed zsh
 if ! fgrep -q "${BREW_PREFIX}/bin/fish" /etc/shells; then
@@ -73,7 +72,6 @@ brew install cmatrix
 brew install neofetch
 
 # Install more recent versions of some macOS tools.
-brew install vim
 brew install grep
 brew install openssh
 brew install screen
@@ -89,6 +87,7 @@ brew install imagemagick --with-web
 brew install lua
 brew install lynx
 brew install micro
+brew install neovim
 brew install npm
 brew install p7zip
 brew install pigz

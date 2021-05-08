@@ -2,8 +2,8 @@
 # ===================
 
 # use zsh-style ls colors for both BSD and GNU ls
-# set -x LSCOLORS Gxfxcxdxbxegedabagacad
-# set -x LS_COLORS "di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+set -x LSCOLORS Gxfxcxdxbxegedabagacad
+set -x LS_COLORS "di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
 # color palette inspired by zsh-syntax-highlighting 
 # (use shell 16-colors rather than custom)
@@ -23,7 +23,7 @@ set fish_color_match --background brblue
 
 # iTerm2 Shell Integrations
 # =========================
-# test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
 
 # Fisher (install if not installed)
 # =================================
@@ -31,9 +31,16 @@ set fish_color_match --background brblue
 
 # PUT BINARIES IN PATH
 # ====================
+
+# GNU ADA Toolchain
+set -g GNAT_BIN /usr/local/opt/gnat-ce-2020/bin
+# Coreutils and findutils
+set -g fish_user_paths $GNAT_BIN $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/findutils/libexec/gnubin" $fish_user_paths
+# Go tools
 set -g fish_user_paths (go env GOPATH)/bin $fish_user_paths
+
 
 # pyenv init
 # ==========
